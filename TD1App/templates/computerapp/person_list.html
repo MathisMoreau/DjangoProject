@@ -1,0 +1,16 @@
+{% extends "index.html"%}
+{% block content %}
+<h1 > Liste des personnes</h1>
+{% if personnes %}
+<ul>
+    {% for machine in personnes %}
+    <li>
+        <a href= "{% url 'person-detail' person.id %}">
+            {{ person.id }}</a> ({{ person.nom}})
+    </li>
+{% endfor %}
+</ul>
+{% else %}
+<p>Il n y a pas de personnes. </p >
+{% endif %}
+{% endblock %}
