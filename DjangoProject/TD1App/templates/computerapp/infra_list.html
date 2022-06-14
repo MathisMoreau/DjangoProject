@@ -1,0 +1,26 @@
+
+{% block content %}
+<h1 > Liste des Infrastructures</h1>
+{% if infrastructures %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Numéro :</th>
+            <th scope="col">Infrastructure</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for infra in infrastructures %}
+        <tr>
+            <th scope="row"></th>
+            <td><a href= "{% url 'infra_detail' infra.id %}">
+            {{ infra.id }}</a></td>
+            <td>({{ infra.nom}})</td>
+        </tr>
+    {% endfor %}
+
+{% else %}
+<p>Il n y a pas d infrastructures. </p >
+{% endif %}
+{% endblock %}

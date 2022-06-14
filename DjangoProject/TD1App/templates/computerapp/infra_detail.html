@@ -1,0 +1,16 @@
+
+{% block content %}
+    <h2> Menu</h2>
+    <ul id=" menu ">
+        <li><a href= "{% url 'index'%}"> Home</a></li>
+    </ul>
+    <h1 > Liste des infrastructures</h1>
+    <p > Nom: {{ infra.nom }}</p>
+    <p> <strong>Id :
+    </strong>  {{ infra.id }}</a></p>
+    <p> <strong>nombres de machines</strong> : {{ infra.nb_machines }}</a></p>
+    <p> <strong> Responsable :
+    </strong > {{ infra.Responsable }} </p>
+    <p> <strong> Entretien :
+    </strong > {{ infra.entretien }} </p>
+{% endblock %}

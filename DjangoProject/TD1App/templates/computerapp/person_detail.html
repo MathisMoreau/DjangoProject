@@ -1,0 +1,14 @@
+
+{% block content %}
+<h2> Menu</h2>
+<ul id=" menu ">
+    <li><a href= "{% url 'index'%}"> Home</a></li>
+</ul>
+<h1 > Liste des personnes</h1>
+<p > Nom: {{ person.nom }}</p>
+<p> <strong>Id</strong> : {{ person.id }}</a></p>
+<p> <strong> Prenom :
+</strong > {{ person.prenom }} </p>
+<p> <strong> Age:
+</strong > {{ person.age }} </p>
+{% endblock %}

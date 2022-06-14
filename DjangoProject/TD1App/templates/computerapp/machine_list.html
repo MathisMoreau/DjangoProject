@@ -1,0 +1,26 @@
+
+{% block content %}
+<h1 > Liste des machines</h1>
+{% if machines %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Numéro :</th>
+            <th scope="col">Machine</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for machine in machines %}
+        <tr>
+            <th scope="row"></th>
+            <td><a href= "{% url 'machine_detail' machine.id %}">
+            {{ machine.id }}</a></td> 
+            <td>({{ machine.nom}})</td>
+        </tr>
+    {% endfor %}
+
+{% else %}
+<p>Il n y a pas de machines. </p >
+{% endif %}
+{% endblock %}

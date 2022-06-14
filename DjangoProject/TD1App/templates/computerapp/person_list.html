@@ -1,0 +1,25 @@
+
+{% block content %}
+<h1 > Liste des personnes</h1>
+{% if personnes %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"> </th>
+            <th scope="col">Numéro :</th>
+            <th scope="col">Machine</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for person in personnes %}
+        <tr>
+            <th scope="row"> </th>
+            <td><a href= "{% url 'person_detail' person.id %}">
+            {{ person.id }}</a></td>
+            <td>({{ person.nom}})</td>
+        </tr>
+    {% endfor %}
+{% else %}
+<p>Il n y a pas de personnes. </p >
+{% endif %}
+{% endblock %}
